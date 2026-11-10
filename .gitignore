@@ -1,0 +1,35 @@
+# Secrets et environnement
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Config personnelle des agents
+CLAUDE.local.md
+.claude/settings.local.json
+
+# Données personnelles : vidéos et résultats d'analyse (vie privée)
+data/
+*.mp4
+*.mov
+*.avi
+
+# Python
+.venv/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+
+# Éditeurs / OS
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.DS_Store

@@ -1,0 +1,41 @@
+[project]
+name = "hammer"
+version = "0.1.0"
+description = "POK : KPI d'un lancer de marteau à partir d'une vidéo"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]",
+]
+
+[project.scripts]
+hammer = "hammer.__main__:main"
+
+[dependency-groups]
+dev = [
+    "mypy",
+    "pytest",
+    "ruff",
+]
+
+[build-system]
+requires = ["uv_build>=0.11,<0.12"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.12"
+files = ["src", "tests"]
+disallow_untyped_defs = true
+warn_unused_ignores = true
+# mediapipe et OpenCV n'ont pas de stubs complets
+ignore_missing_imports = true
